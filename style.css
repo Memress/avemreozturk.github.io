@@ -17,61 +17,63 @@ body {
 
 /* Ana Taşıyıcı Konteyner */
 .container {
-    max-width: 900px;
+    max-width: 1000px; /* İçerik alanını biraz daha genişlettik */
     margin: 0 auto;
-    padding: 40px 20px;
+    padding: 60px 20px; /* Üstten ve alttan daha fazla boşluk */
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-/* Başlık Görseli */
+/* Başlık Görseli (İstek üzerine büyütüldü) */
 header {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 50px; /* Başlık ile içerik arası boşluk artırıldı */
 }
 
 .title-img {
     max-width: 100%;
     height: auto;
-    max-height: 120px; /* Başlık boyutu çok büyükse bu değeri değiştirebilirsiniz */
+    max-height: 200px; /* Başlık boyutu önemli ölçüde büyütüldü (eski: 120px) */
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3)); /* Başlığa hafif bir gölge eklendi */
 }
 
-/* İçerik Kutusu (Yarı saydam arkaplan okunabilirliği artırır) */
+/* İçerik Kutusu */
 .content-box {
     background-color: rgba(255, 255, 255, 0.95);
-    border-radius: 12px;
-    padding: 40px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border-radius: 15px; /* Köşeler biraz daha yumuşatıldı */
+    padding: 50px; /* İç boşluk artırıldı */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
 
 /* Biyografi Bölümü Düzeni */
 .bio-section {
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 40px; /* Resim ve metin arası boşluk artırıldı */
 }
 
+/* Profil Resmi (İstek üzerine büyütüldü ve çerçeve eklendi) */
 .profile-img {
-    width: 200px;
-    height: 200px;
+    width: 300px;  /* Resim genişliği artırıldı (eski: 200px) */
+    height: 300px; /* Resim yüksekliği artırıldı (eski: 200px) */
     object-fit: cover;
     border-radius: 50%;
-    border: 4px solid #fff;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 8px solid #fff; /* Kalın, temiz, beyaz bir çerçeve */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* Daha belirgin bir gölge */
     flex-shrink: 0;
 }
 
 .bio-text h2, .contact-section h2 {
     color: #2c3e50;
-    margin-bottom: 15px;
-    font-size: 1.8rem;
+    margin-bottom: 20px;
+    font-size: 2rem; /* Başlık font boyutu biraz daha büyük */
 }
 
 .bio-text p {
     text-align: justify;
-    font-size: 1.1rem;
+    font-size: 1.15rem; /* Metin font boyutu biraz daha büyük */
     color: #444;
 }
 
@@ -80,7 +82,7 @@ header {
     border: 0;
     height: 1px;
     background: #e0e0e0;
-    margin: 40px 0;
+    margin: 50px 0; /* Çizginin üst ve alt boşluğu artırıldı */
 }
 
 /* İletişim Bölümü */
@@ -89,8 +91,8 @@ header {
 }
 
 .contact-section li {
-    margin-bottom: 15px;
-    font-size: 1.2rem;
+    margin-bottom: 20px;
+    font-size: 1.25rem; /* İletişim metinleri biraz daha büyük */
 }
 
 .contact-section a {
@@ -108,22 +110,29 @@ header {
 /* --- TELEFON VE TABLET UYUMU (Responsive Design) --- */
 @media screen and (max-width: 768px) {
     .container {
-        padding: 20px 15px;
+        padding: 30px 15px;
     }
 
     .content-box {
-        padding: 25px;
+        padding: 30px;
+    }
+
+    /* Telefonlarda başlığı biraz küçültelim */
+    .title-img {
+        max-height: 140px;
     }
 
     /* Telefonlarda fotoğraf ve yazıyı alt alta getirir */
     .bio-section {
         flex-direction: column;
         text-align: center;
+        gap: 20px;
     }
 
     .profile-img {
-        width: 160px;
-        height: 160px;
+        width: 220px; /* Mobilde çok devasa olmaması için biraz küçülttük */
+        height: 220px;
+        border-width: 6px; /* Mobilde çerçeveyi biraz incelttik */
     }
 
     .bio-text p {
